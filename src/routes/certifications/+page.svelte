@@ -145,18 +145,32 @@
 </script>
 
 {#if markdownContent}
-	<div class="prose prose-invert mx-auto max-w-2xl rounded-lg p-4 shadow-md sm:p-8">
+	<div
+		class="prose dark:prose-invert prose-gray mx-auto max-w-2xl rounded-lg
+				bg-white p-4
+				text-gray-800 shadow-md sm:p-8
+				dark:bg-neutral-900 dark:text-gray-200"
+	>
 		{@html markdownContent}
 	</div>
 {:else}
-	<section class="py- 2 mx-auto w-full max-w-3xl px-4 pt-2 pb-2">
+	<section class="mx-auto w-full max-w-3xl px-4 py-2">
+		<!-- Certifications -->
 		<div>
-			<h2 class="mb-8 text-xl text-white sm:text-2xl md:text-3xl">Certifications</h2>
+			<h2
+				class="mb-8 text-xl text-gray-900 sm:text-2xl
+				md:text-3xl dark:text-white"
+			>
+				Certifications
+			</h2>
+
 			<div class="flex flex-col space-y-6">
 				{#each posts as { date, title, href, certHref } (title)}
 					<div
-						class="flex w-full flex-col items-start justify-between gap-y-3 sm:flex-row sm:items-center"
+						class="flex w-full flex-col items-start
+						justify-between gap-y-3 sm:flex-row sm:items-center"
 					>
+						<!-- Title -->
 						<a
 							{href}
 							onclick={(e) => {
@@ -165,21 +179,42 @@
 							}}
 							class="group flex cursor-pointer items-center gap-x-3 text-left"
 						>
-							<svg class="h-5 w-5 text-neutral-500" fill="currentColor" viewBox="0 0 20 20">
+							<svg
+								class="h-5 w-5 text-gray-500 dark:text-neutral-400"
+								fill="currentColor"
+								viewBox="0 0 20 20"
+							>
 								<path d={documentIconPath}></path>
 							</svg>
-							<h2 class="text-neutral-100 group-hover:underline">{title}</h2>
+
+							<h2 class="text-gray-900 group-hover:underline dark:text-neutral-100">
+								{title}
+							</h2>
 						</a>
+
+						<!-- Right Section -->
 						<div
-							class="flex w-full items-center justify-between gap-x-6 pl-8 sm:w-auto sm:justify-end sm:pl-0"
+							class="flex w-full items-center justify-between gap-x-6
+							pl-8 sm:w-auto sm:justify-end sm:pl-0"
 						>
-							<span class="min-w-fit text-sm text-neutral-400">{date}</span>
+							<span class="min-w-fit text-sm text-gray-500 dark:text-neutral-400">
+								{date}
+							</span>
+
 							{#if certHref !== 'a'}
 								<a
 									href={certHref}
 									target="_blank"
 									rel="noopener noreferrer"
-									class="group flex items-center gap-x-1.5 rounded-full border border-neutral-700 bg-neutral-800/50 px-3 py-1 text-sm text-neutral-300 transition-colors hover:border-neutral-500 hover:bg-neutral-800 hover:text-white"
+									class="group flex items-center gap-x-1.5 rounded-full border
+									border-gray-300 bg-gray-100
+									px-3 py-1
+									text-sm text-gray-700 transition-colors
+									hover:border-gray-500 hover:bg-gray-200
+									hover:text-black
+									dark:border-neutral-700 dark:bg-neutral-800/50
+									dark:text-neutral-300 dark:hover:border-neutral-500
+									dark:hover:bg-neutral-800 dark:hover:text-white"
 								>
 									<svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
 										<path d={certificateIconPath}></path>
@@ -193,12 +228,20 @@
 			</div>
 		</div>
 
+		<!-- Course Completion -->
 		<div class="mt-12">
-			<h2 class="mb-8 text-xl text-white sm:text-2xl md:text-3xl">Course Completion</h2>
+			<h2
+				class="mb-8 text-xl text-gray-900 sm:text-2xl
+				md:text-3xl dark:text-white"
+			>
+				Course Completion
+			</h2>
+
 			<div class="flex flex-col space-y-6">
 				{#each postsCCompletion as { date, title, href, certHref } (title)}
 					<div
-						class="flex w-full flex-col items-start justify-between gap-y-3 sm:flex-row sm:items-center"
+						class="flex w-full flex-col items-start
+						justify-between gap-y-3 sm:flex-row sm:items-center"
 					>
 						<a
 							{href}
@@ -208,21 +251,41 @@
 							}}
 							class="group flex cursor-pointer items-center gap-x-3 text-left"
 						>
-							<svg class="h-5 w-5 text-neutral-500" fill="currentColor" viewBox="0 0 20 20">
+							<svg
+								class="h-5 w-5 text-gray-500 dark:text-neutral-400"
+								fill="currentColor"
+								viewBox="0 0 20 20"
+							>
 								<path d={documentIconPath}></path>
 							</svg>
-							<h2 class="text-neutral-100 group-hover:underline">{title}</h2>
+
+							<h2 class="text-gray-900 group-hover:underline dark:text-neutral-100">
+								{title}
+							</h2>
 						</a>
+
 						<div
-							class="flex w-full items-center justify-between gap-x-6 pl-8 sm:w-auto sm:justify-end sm:pl-0"
+							class="flex w-full items-center justify-between gap-x-6
+							pl-8 sm:w-auto sm:justify-end sm:pl-0"
 						>
-							<span class="min-w-fit text-sm text-neutral-400">{date}</span>
+							<span class="min-w-fit text-sm text-gray-500 dark:text-neutral-400">
+								{date}
+							</span>
+
 							{#if certHref}
 								<a
 									href={certHref}
 									target="_blank"
 									rel="noopener noreferrer"
-									class="group flex items-center gap-x-1.5 rounded-full border border-neutral-700 bg-neutral-800/50 px-3 py-1 text-sm text-neutral-300 transition-colors hover:border-neutral-500 hover:bg-neutral-800 hover:text-white"
+									class="group flex items-center gap-x-1.5 rounded-full border
+									border-gray-300 bg-gray-100
+									px-3 py-1
+									text-sm text-gray-700 transition-colors
+									hover:border-gray-500 hover:bg-gray-200
+									hover:text-black
+									dark:border-neutral-700 dark:bg-neutral-800/50
+									dark:text-neutral-300 dark:hover:border-neutral-500
+									dark:hover:bg-neutral-800 dark:hover:text-white"
 								>
 									<svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
 										<path d={certificateIconPath}></path>

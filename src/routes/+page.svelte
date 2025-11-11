@@ -6,13 +6,18 @@
 	<main in:fly={{ y: 20, duration: 600, delay: 100 }} class="w-full max-w-3xl">
 		<section class="flex w-full flex-col gap-8">
 			<div class="flex flex-col gap-3">
-				<p class="text-xl font-medium text-emerald-400 md:text-2xl">
+				<p class="text-xl font-medium text-emerald-500 md:text-2xl dark:text-emerald-400">
 					Hello everyone <span class="wave-animation inline-block">👋</span>
 				</p>
-				<h1 class="text-5xl tracking-tight text-slate-100 sm:text-6xl md:text-7xl">I'm Bhushan</h1>
+
+				<h1
+					class="text-5xl tracking-tight text-gray-900 sm:text-6xl md:text-7xl dark:text-slate-100"
+				>
+					I'm Bhushan
+				</h1>
 			</div>
 
-			<div class="space-y-4 text-lg leading-relaxed text-slate-400 md:text-xl">
+			<div class="space-y-4 text-lg leading-relaxed text-gray-600 md:text-xl dark:text-slate-300">
 				<p>I'm a 4th-year Bachelor of Technology student at the Central University of Haryana</p>
 
 				<p>
@@ -21,7 +26,7 @@
 				</p>
 			</div>
 
-			<p class="text-sm text-slate-500">
+			<p class="text-sm text-gray-500 dark:text-slate-500">
 				Note: This portfolio is under development. I will be updating links and content soon.
 			</p>
 		</section>
@@ -55,9 +60,7 @@
 		50% {
 			transform: rotate(10deg);
 		}
-		60% {
-			transform: rotate(0deg);
-		}
+		60%,
 		100% {
 			transform: rotate(0deg);
 		}

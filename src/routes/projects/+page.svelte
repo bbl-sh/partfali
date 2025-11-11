@@ -50,8 +50,9 @@
 		'M10.75 8.75a.75.75 0 0 0 0 1.5h1.5v1.5a.75.75 0 0 0 1.5 0v-1.5h1.5a.75.75 0 0 0 0-1.5h-1.5v-1.5a.75.75 0 0 0-1.5 0v1.5h-1.5z M4.5 2A2.5 2.5 0 0 0 2 4.5v9A2.5 2.5 0 0 0 4.5 16h9a2.5 2.5 0 0 0 2.5-2.5V9a.75.75 0 0 0-1.5 0v4.5a1 1 0 0 1-1 1h-9a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1h4.5a.75.75 0 0 0 0-1.5H4.5z';
 </script>
 
-<section class=" w-full max-w-3xl px-2 py-2">
-	<h1 class="justify-endfont-medium mb-8 text-2xl text-white">Projects</h1>
+<section class="w-full max-w-3xl px-2 py-2">
+	<h1 class="mb-8 text-2xl font-medium text-gray-900 dark:text-white">Projects</h1>
+
 	<div class="flex flex-col space-y-6">
 		{#each projectsOngoing as project (project.title)}
 			<div
@@ -65,13 +66,16 @@
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
-						class="h-5 w-5 text-neutral-500"
+						class="h-5 w-5 text-gray-500 dark:text-neutral-400"
 						viewBox="0 0 16 16"
 						fill="currentColor"
 					>
 						<path d={githubIconPath} />
 					</svg>
-					<h2 class="font-medium text-neutral-100 group-hover:underline">{project.title}</h2>
+
+					<h2 class="font-medium text-gray-900 group-hover:underline dark:text-neutral-100">
+						{project.title}
+					</h2>
 				</a>
 
 				{#if project.demoHref}
@@ -79,7 +83,15 @@
 						href={project.demoHref}
 						target="_blank"
 						rel="noopener noreferrer"
-						class="group flex items-center gap-x-2 rounded-full border border-neutral-700 bg-neutral-800/50 px-3 py-1 text-sm text-neutral-300 transition-colors hover:border-neutral-500 hover:bg-neutral-800 hover:text-white"
+						class="group flex items-center gap-x-2 rounded-full border
+						border-gray-300 bg-gray-100
+						px-3 py-1
+						text-sm text-gray-700 transition-colors
+						hover:border-gray-500 hover:bg-gray-200
+						hover:text-black
+						dark:border-neutral-700 dark:bg-neutral-800/50
+						dark:text-neutral-300 dark:hover:border-neutral-500
+						dark:hover:bg-neutral-800 dark:hover:text-white"
 					>
 						<span>View Demo</span>
 						<svg
@@ -96,10 +108,3 @@
 		{/each}
 	</div>
 </section>
-
-<style>
-	:global(body) {
-		background-color: #111827;
-		color: #e5e7eb;
-	}
-</style>
