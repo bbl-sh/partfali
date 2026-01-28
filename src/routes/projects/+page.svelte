@@ -1,110 +1,171 @@
 <script>
+	import { fly } from 'svelte/transition';
+	import { Github, ExternalLink, FolderGit2, Sparkles, Cpu, Server, Code2, Box, Layers } from 'lucide-svelte';
+
 	let projectsOngoing = [
 		{
 			title: 'Agentic CI/CD',
+			description: 'Building intelligent CI/CD pipelines with AI agents for automated testing and deployment',
 			href: 'https://github.com/john221wick/agentic-ci-cd',
-			demoHref: null
+			demoHref: null,
+			icon: Sparkles,
+			tags: ['AI', 'DevOps', 'Automation']
 		},
 		{
 			title: 'Making miniGPT',
+			description: 'Building a GPT model from scratch to understand transformer architecture deeply',
 			href: 'https://github.com/john221wick/building-llm',
-			demoHref: 'https://building-llm.vercel.app/'
+			demoHref: 'https://building-llm.vercel.app/',
+			icon: Cpu,
+			tags: ['LLM', 'Deep Learning', 'Python']
 		},
 		{
-			title: 'Leetcode clone',
+			title: 'Leetcode Clone',
+			description: 'A competitive programming platform with code execution and problem solving features',
 			href: 'https://github.com/john221wick/cp-platform',
-			demoHref: 'https://cp-platform-one.vercel.app/'
+			demoHref: 'https://cp-platform-one.vercel.app/',
+			icon: Code2,
+			tags: ['Full Stack', 'React', 'Node.js']
 		},
 		{
 			title: 'GPU Programming',
+			description: 'Exploring CUDA and GPU computing for high-performance parallel processing',
 			href: 'https://github.com/john221wick/gpu-programming',
-			demoHref: null
+			demoHref: null,
+			icon: Layers,
+			tags: ['CUDA', 'C++', 'HPC']
 		},
 		{
 			title: 'Building CodeCrafters Clone',
+			description: 'Recreating CodeCrafters to learn by building real-world software',
 			href: '#',
-			demoHref: '#'
+			demoHref: null,
+			icon: Box,
+			tags: ['Systems', 'Education', 'Go']
 		},
 		{
-			title: 'Github actions and Terraform',
+			title: 'Github Actions & Terraform',
+			description: 'Infrastructure as code with automated deployment workflows',
 			href: '#',
-			demoHref: null
+			demoHref: null,
+			icon: Server,
+			tags: ['IaC', 'CI/CD', 'Cloud']
 		},
 		{
 			title: 'Building Pytorch',
+			description: 'Understanding deep learning frameworks by implementing core components',
 			href: '#',
-			demoHref: '#'
+			demoHref: null,
+			icon: Cpu,
+			tags: ['ML', 'Python', 'Autograd']
 		},
 		{
-			title: 'Building X Golang Projects',
+			title: 'Golang X Projects',
+			description: 'Collection of projects exploring Go for systems programming',
 			href: 'https://github.com/john221wick/golangXprojects',
-			demoHref: null
+			demoHref: null,
+			icon: Code2,
+			tags: ['Go', 'Systems', 'CLI']
 		}
 	];
-
-	// SVG paths for the icons
-	const githubIconPath =
-		'M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z';
-
-	const externalLinkIconPath =
-		'M10.75 8.75a.75.75 0 0 0 0 1.5h1.5v1.5a.75.75 0 0 0 1.5 0v-1.5h1.5a.75.75 0 0 0 0-1.5h-1.5v-1.5a.75.75 0 0 0-1.5 0v1.5h-1.5z M4.5 2A2.5 2.5 0 0 0 2 4.5v9A2.5 2.5 0 0 0 4.5 16h9a2.5 2.5 0 0 0 2.5-2.5V9a.75.75 0 0 0-1.5 0v4.5a1 1 0 0 1-1 1h-9a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1h4.5a.75.75 0 0 0 0-1.5H4.5z';
 </script>
 
-<section class="w-full max-w-3xl px-2 py-2">
-	<h1 class="mb-8 text-2xl font-medium text-gray-900 dark:text-white">Projects</h1>
+<div class="flex w-full flex-col gap-8 py-4 sm:py-8" in:fly={{ y: 20, duration: 500, delay: 100 }}>
+	<!-- Header -->
+	<section class="flex flex-col gap-4">
+		<div class="flex items-center gap-3">
+			<div class="rounded-xl bg-emerald-100 p-2.5 dark:bg-emerald-900">
+				<FolderGit2 class="h-6 w-6 text-emerald-600 dark:text-emerald-400" />
+			</div>
+			<div>
+				<h1 class="text-2xl font-bold text-gray-900 dark:text-white sm:text-3xl">Projects</h1>
+				<p class="text-sm text-gray-500 dark:text-gray-500">Things I'm building and exploring</p>
+			</div>
+		</div>
+	</section>
 
-	<div class="flex flex-col space-y-6">
-		{#each projectsOngoing as project (project.title)}
-			<div
-				class="flex w-full flex-col items-start justify-between gap-y-3 sm:flex-row sm:items-center"
+	<!-- Projects Grid -->
+	<section class="stagger-children grid gap-4 sm:grid-cols-2">
+		{#each projectsOngoing as project}
+			<article
+				class="card-hover group flex flex-col gap-4 rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-gray-900"
 			>
-				<a
-					href={project.href}
-					target="_blank"
-					rel="noopener noreferrer"
-					class="group flex items-center gap-x-3 transition-opacity hover:opacity-80"
-				>
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						class="h-5 w-5 text-gray-500 dark:text-neutral-400"
-						viewBox="0 0 16 16"
-						fill="currentColor"
-					>
-						<path d={githubIconPath} />
-					</svg>
+				<!-- Header -->
+				<div class="flex items-start justify-between">
+					<div class="rounded-xl bg-gray-100 p-2.5 dark:bg-gray-800">
+						<project.icon class="h-5 w-5 text-gray-600 dark:text-gray-400" />
+					</div>
+					<div class="flex items-center gap-2">
+						{#if project.href !== '#'}
+							<a
+								href={project.href}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="rounded-lg p-2 text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:hover:bg-gray-800 dark:hover:text-white"
+								aria-label="View on GitHub"
+							>
+								<Github class="h-5 w-5" />
+							</a>
+						{/if}
+						{#if project.demoHref && project.demoHref !== '#'}
+							<a
+								href={project.demoHref}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="rounded-lg p-2 text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:hover:bg-gray-800 dark:hover:text-white"
+								aria-label="View demo"
+							>
+								<ExternalLink class="h-5 w-5" />
+							</a>
+						{/if}
+					</div>
+				</div>
 
-					<h2 class="font-medium text-gray-900 group-hover:underline dark:text-neutral-100">
+				<!-- Content -->
+				<div class="flex flex-col gap-2">
+					<h2 class="font-semibold text-gray-900 dark:text-white">
 						{project.title}
 					</h2>
-				</a>
+					<p class="line-clamp-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+						{project.description}
+					</p>
+				</div>
 
-				{#if project.demoHref}
-					<a
-						href={project.demoHref}
-						target="_blank"
-						rel="noopener noreferrer"
-						class="group flex items-center gap-x-2 rounded-full border
-						border-gray-300 bg-gray-100
-						px-3 py-1
-						text-sm text-gray-700 transition-colors
-						hover:border-gray-500 hover:bg-gray-200
-						hover:text-black
-						dark:border-neutral-700 dark:bg-neutral-800/50
-						dark:text-neutral-300 dark:hover:border-neutral-500
-						dark:hover:bg-neutral-800 dark:hover:text-white"
-					>
-						<span>View Demo</span>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							class="h-4 w-4 transition-transform group-hover:translate-x-0.5"
-							viewBox="0 0 20 20"
-							fill="currentColor"
+				<!-- Tags -->
+				<div class="mt-auto flex flex-wrap gap-2">
+					{#each project.tags as tag}
+						<span
+							class="rounded-full bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-600 dark:bg-gray-800 dark:text-gray-400"
 						>
-							<path d={externalLinkIconPath} />
-						</svg>
-					</a>
-				{/if}
-			</div>
+							{tag}
+						</span>
+					{/each}
+				</div>
+			</article>
 		{/each}
-	</div>
-</section>
+	</section>
+
+	<!-- GitHub CTA -->
+	<section
+		class="flex flex-col items-center gap-4 rounded-2xl border border-gray-200 bg-gradient-to-br from-gray-50 to-white p-6 text-center dark:border-gray-800 dark:from-gray-900 dark:to-gray-800 sm:p-8"
+	>
+		<div class="rounded-full bg-gray-900 p-3 dark:bg-white">
+			<Github class="h-6 w-6 text-white dark:text-gray-900" />
+		</div>
+		<div>
+			<h3 class="text-lg font-semibold text-gray-900 dark:text-white">Want to see more?</h3>
+			<p class="text-sm text-gray-600 dark:text-gray-400">
+				Check out my GitHub for all projects and contributions
+			</p>
+		</div>
+		<a
+			href="https://github.com/john221wick"
+			target="_blank"
+			rel="noopener noreferrer"
+			class="inline-flex items-center gap-2 rounded-xl bg-gray-900 px-5 py-2.5 text-sm font-medium text-white transition-all hover:bg-gray-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100"
+		>
+			<span>Visit GitHub</span>
+			<ExternalLink class="h-4 w-4" />
+		</a>
+	</section>
+</div>

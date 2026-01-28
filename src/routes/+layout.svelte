@@ -6,17 +6,16 @@
 </script>
 
 <svelte:head>
-	<title>Bhushan</title>
+	<title>Bhushan | Software Developer</title>
+	<meta name="description" content="Bhushan's portfolio - MLOps, AI Agents, LLMs, and DevOps" />
 </svelte:head>
 
 <div
-	class="flex min-h-screen flex-col bg-white text-gray-900 transition-colors dark:bg-[#1e1e1e] dark:text-white"
+	class="flex min-h-screen flex-col bg-gradient-to-b from-gray-50 to-white text-gray-900 transition-colors duration-300 dark:from-neutral-900 dark:to-neutral-950 dark:text-white"
 >
-	<div class="mx-auto w-full max-w-[800px] p-8">
-		<Navbar />
-		<main class="flex flex-grow flex-col items-center justify-center text-center">
-			{@render children()}
-		</main>
-		<Footer />
-	</div>
+	<Navbar />
+	<main class="mx-auto w-full max-w-4xl flex-grow px-4 py-2 sm:px-6 lg:px-8">
+		{@render children()}
+	</main>
+	<Footer />
 </div>
