@@ -63,8 +63,8 @@
 					>MLOps</span
 				>, building <span class="font-medium text-zinc-900 dark:text-white">AI agents</span> and
 				<span class="font-medium text-zinc-900 dark:text-white">LLMs</span>, while exploring the
-				<span class="font-medium text-zinc-900 dark:text-white">DevOps</span> ecosystem. I enjoy building
-				projects from scratch to understand fundamentals and how systems behave under real constraints.
+				<span class="font-medium text-zinc-900 dark:text-white">DevOps & Linux</span> ecosystem. I enjoy
+				building projects from scratch to understand fundamentals and how systems behave under real constraints.
 			</p>
 		</div>
 	</section>
