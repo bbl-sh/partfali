@@ -18,49 +18,49 @@
 			date: 'April 2025',
 			title: 'GPU Architecture and Programming',
 			institution: 'IIT Kharagpur',
-			href: '/test.md',
+			href: '/syllabi/gpu-programming.md',
 			certHref: 'https://drive.google.com/file/d/1osecrPLUM18Xps4YD7U-SFsgPmr4Y5_M/view?usp=sharing'
 		},
 		{
 			date: 'April 2025',
 			title: 'Large Language Model',
 			institution: 'IIT Kharagpur',
-			href: '/test.md',
+			href: '/syllabi/llm-syllabus.md',
 			certHref: 'https://drive.google.com/file/d/1ooPebX8Gb6vn6yln84T0I5W0kho_5nmm/view?usp=sharing'
 		},
 		{
 			date: 'April 2025',
 			title: 'Image Processing with Python',
 			institution: 'Online',
-			href: '/test.md',
+			href: '/syllabi/image-processing-python.md',
 			certHref: 'https://drive.google.com/file/d/1pQ8vRAbWERdYcreQrF-LmWoDMji0cjbx/view?usp=sharing'
 		},
 		{
 			date: 'April 2024',
 			title: 'Applied Accelerated AI',
 			institution: 'IIT Palakkad & NVIDIA',
-			href: '/test.md',
+			href: '/syllabi/applied-accelerated-ml.md',
 			certHref: 'https://drive.google.com/file/d/1sNASrD4_2LE5u9BvUOe6iFoc1xcM33J5/view?usp=sharing'
 		},
 		{
 			date: 'May 2024',
 			title: 'Linear Algebra through Geometry',
 			institution: 'IISc Bangalore',
-			href: '/test.md',
+			href: '/syllabi/linear-algebra-geometry.md',
 			certHref: 'https://drive.google.com/file/d/1sQ1ao9MML9DGDTPgLIkNoN_8ZpAeX3e8/view?usp=sharing'
 		},
 		{
 			date: 'April 2023',
 			title: 'Blockchain and its Applications',
 			institution: 'IIT Kharagpur',
-			href: '/test.md',
+			href: '/syllabi/blockchain.md',
 			certHref: 'https://drive.google.com/file/d/17TjADjJWDIpLPIvcVod_I3EiohaN1bs2/view?usp=sharing'
 		},
 		{
 			date: 'November 2022',
 			title: 'Deep Learning',
 			institution: 'IIT Ropar',
-			href: '/test.md',
+			href: '/syllabi/deep-learning.md',
 			certHref: 'https://drive.google.com/file/d/1MQ6OE30keXZi5iFZ8qNmST9ob8cBcn23/view?usp=sharing'
 		}
 	];
@@ -185,7 +185,7 @@
 			<div
 				class="flex items-center justify-between border-b border-zinc-200 px-4 py-3 dark:border-white/10"
 			>
-				<p class="text-sm font-medium text-zinc-700 dark:text-zinc-200">Notes</p>
+				<p class="text-sm font-medium text-zinc-700 dark:text-zinc-200">Syllabus</p>
 				<button
 					class="rounded-lg p-2 text-zinc-500 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-white/10"
 					onclick={closeMarkdown}
@@ -195,8 +195,10 @@
 				</button>
 			</div>
 
-			<div class="max-h-[calc(92vh-52px)] overflow-y-auto px-4 py-5">
-				<div class="prose prose-zinc dark:prose-invert max-w-none">
+			<div class="max-h-[calc(92vh-52px)] overflow-y-auto px-3 py-4 sm:px-4 sm:py-5">
+				<div
+					class="prose prose-zinc dark:prose-invert prose-sm sm:prose-base prose-headings:mt-4 prose-headings:mb-2 prose-headings:leading-snug prose-ul:my-2 prose-li:my-1 max-w-none"
+				>
 					{@html markdownContent}
 				</div>
 			</div>
@@ -261,7 +263,7 @@
 											onclick={() => loadMarkdown(href)}
 										>
 											<FileText class="h-4 w-4" />
-											<span>Notes</span>
+											<!-- <span>Notes</span> -->
 										</button>
 
 										<a
